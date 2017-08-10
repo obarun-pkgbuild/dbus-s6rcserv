@@ -1,0 +1,7 @@
+#!/usr/local/bin/execlineb -P
+fdmove -c 2 1
+if -nt { s6-test -d /run/dbus }
+if { s6-mkdir -p -m 0755 /run/dbus }
+exec -c 
+/usr/bin/dbus-uuidgen --ensure
+
