@@ -1,4 +1,0 @@
-#!/usr/local/bin/execlineb -P
-fdmove -c 2 1
-exec -c
-/usr/bin/dbus-daemon --nofork --nopidfile --config-file=/usr/share/dbus-1/system.conf

@@ -1,0 +1,5 @@
+#!@BINDIR_EXECLINE@/execlineb -P
+fdmove -c 2 1
+s6-ipcserver-socketbinder -- /run/dbus/system_bus_socket
+foreground { /usr/bin/dbus-uuidgen --ensure }
+exec dbus-daemon --nofork --nopidfile --system --address=unix:path=/run/dbus/system_bus_socket
