@@ -20,7 +20,7 @@ prepare(){
 	
 	sed -i "s:base:${pkgbase}:g" Makefile
 	name_cap=( "${pkgbase[*]^}" )
-	exist=$(find -name base -type d)
+	exist=$(find -maxdepth 1 -name 'base-*' -type d)
 	if [[ -n "${exist}" ]]; then
 		if [[ -d bundle-base ]]; then
 			find -type d -name 'bundle-base' | rename base "${name_cap}" bundle-base 
